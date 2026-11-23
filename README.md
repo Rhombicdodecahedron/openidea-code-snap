@@ -1,13 +1,18 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Rhombicdodecahedron/openidea-code-snap/main/icon.svg" width="72" alt="">
+  <img src="https://raw.githubusercontent.com/Rhombicdodecahedron/openidea-code-snap/main/assets/banner.png" alt="Code Snap: turn your selection into a polished image" width="100%">
 </p>
-
-<h1 align="center">Code Snap</h1>
 
 <p align="center">
-  Turn the code you selected into a polished image, right inside
-  <a href="https://github.com/l0ng-ai/openidea">OpenIDEA</a>.
+  <img src="https://raw.githubusercontent.com/Rhombicdodecahedron/openidea-code-snap/main/icon.svg" width="28" alt="" align="absmiddle">&nbsp;
+  <b>Code Snap</b> for <a href="https://github.com/l0ng-ai/openidea">OpenIDEA</a>
+  &nbsp;·&nbsp; <a href="#use-it">Use it</a>
+  &nbsp;·&nbsp; <a href="#styles">Styles</a>
+  &nbsp;·&nbsp; <a href="#install">Install</a>
 </p>
+
+Select some code, press one shortcut, and get an image ready to paste into a
+chat, a post or a README: a window frame, a gradient background and the
+[Doppler](https://github.com/Rhombicdodecahedron/openidea-doppler) palettes.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Rhombicdodecahedron/openidea-code-snap/main/assets/panel-crimson-cobalt.png" width="49%" alt="Code Snap panel with the Crimson Cobalt theme on the Doppler background">
