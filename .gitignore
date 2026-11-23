@@ -1,0 +1,6 @@
+/target
+# Built by `openidea-plugin build`; shipped in the release package, not the repo
+/dist
+*.oiplugin
+*.key
+.DS_Store

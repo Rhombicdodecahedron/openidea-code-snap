@@ -1,0 +1,43 @@
+id = "rhombicdodecahedron.code-snap"
+name = "Code Snap"
+version = "0.1.0"
+description = "Turn the selected code into a polished image, with a window frame, a gradient background and the Doppler palettes. Copy it to the clipboard or save it as a PNG."
+authors = ["Rhombicosidodecahedron"]
+homepage = "https://github.com/Rhombicdodecahedron/openidea-code-snap"
+license = "MIT"
+change-notes = "0.1.0: first release."
+categories = ["tools"]
+icon = "icon.svg"
+# `icon` needs plugin API 1.2 or later.
+engines.openidea = "^1.2"
+# Built by `openidea-plugin build`.
+wasm = "dist/plugin.wasm"
+activation = ["on-view:snap"]
+
+# What the code may do. The user approves these when installing.
+[capabilities]
+# editor.read: read the selected code and the file's language when you run Snap Selection.
+# storage:     remember the last snippet and your style (theme, background, padding).
+# clipboard:   let the panel copy the image to the clipboard.
+required = ["editor.read", "storage", "clipboard"]
+
+[[contributes.commands]]
+id = "snap"
+title = "Code Snap: Snap Selection"
+category = "Code Snap"
+
+[[contributes.menus]]
+menu = "editor.context"
+command = "snap"
+
+[[contributes.keymaps]]
+command = "snap"
+key = "Ctrl+Alt+Shift+P"
+mac = "Meta+Alt+Shift+P"
+
+[[contributes.views]]
+id = "snap"
+title = "Code Snap"
+icon = "icons/snap.svg"
+location = "right"
+web = "web/index.html"

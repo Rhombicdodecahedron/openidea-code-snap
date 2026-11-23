@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "Snap Mono";
+  src: url("fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Snap Mono";
+  src: url("fonts/jetbrains-mono-latin-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Snap Mono";
+  src: url("fonts/jetbrains-mono-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* The panel follows the IDE theme through the frame's --openidea-* variables. */
+:root {
+  --bg: var(--openidea-bg, #111114);
+  --bg-input: var(--openidea-bg-input, #18181c);
+  --bg-hover: var(--openidea-bg-hover, #222228);
+  --fg: var(--openidea-fg, #d4d4dc);
+  --fg-muted: var(--openidea-fg-muted, #8a8a96);
+  --border: var(--openidea-border, #2a2a32);
+  --accent: var(--openidea-accent, #e23a4e);
+  --on-accent: var(--openidea-fg-on-accent, #ffffff);
+  --focus: var(--openidea-focus-ring, #5b9bff);
+  --success: var(--openidea-success, #5fcf87);
+  --danger: var(--openidea-danger, #ff4d61);
+  --ui-font: var(--openidea-font-ui, system-ui, -apple-system, "Segoe UI", sans-serif);
+  --ui-size: var(--openidea-font-size, 13px);
+  color-scheme: dark;
+}
+:root[data-theme="light"] { color-scheme: light; }
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font: var(--ui-size) / 1.4 var(--ui-font);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.row { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.field { display: flex; flex-direction: column; gap: 3px; color: var(--fg-muted); font-size: 0.92em; flex: 1 1 110px; min-width: 0; }
+.check { display: flex; gap: 6px; align-items: center; white-space: nowrap; }
+
+select, input.title, button {
+  font: inherit;
+  color: var(--fg);
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 8px;
+  min-width: 0;
+}
+select { width: 100%; }
+input.title { flex: 1 1 120px; }
+input[type="checkbox"] { accent-color: var(--accent); margin: 0; }
+button { cursor: pointer; padding: 6px 12px; }
+button:hover { background: var(--bg-hover); }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }
+button.primary:hover { filter: brightness(1.08); }
+button:disabled { opacity: 0.5; cursor: default; }
+.actions { justify-content: flex-end; }
+.actions button { flex: 1 1 0; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+
+.stage {
+  min-height: 0;
+  overflow: auto;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  /* A checkerboard shows through transparent backgrounds. */
+  background:
+    conic-gradient(var(--bg-hover) 25%, transparent 0 50%, var(--bg-hover) 0 75%, transparent 0) 0 0 / 16px 16px,
+    var(--bg);
+}
+.stage canvas { display: block; max-width: 100%; height: auto; border-radius: 4px; }
+
+.status {
+  padding: 6px 12px;
+  border-top: 1px solid var(--border);
+  color: var(--fg-muted);
+  font-size: 0.92em;
+  min-height: 2.2em;
+}
+.status.ok { color: var(--success); }
+.status.error { color: var(--danger); }
